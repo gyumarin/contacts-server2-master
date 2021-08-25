@@ -12,13 +12,16 @@ const app_controller_1 = require("./app.controller");
 const app_service_1 = require("./app.service");
 const contacts_module_1 = require("./contacts/contacts.module");
 const prisma_service_1 = require("./contacts/prisma.service");
+const info_controller_1 = require("./info/info.controller");
+const info_service_1 = require("./info/info.service");
+const info_module_1 = require("./info/info.module");
 let AppModule = class AppModule {
 };
 AppModule = __decorate([
     common_1.Module({
-        imports: [contacts_module_1.ContactsModule],
-        controllers: [app_controller_1.AppController],
-        providers: [app_service_1.AppService, prisma_service_1.PrismaService],
+        imports: [contacts_module_1.ContactsModule, info_module_1.InfoModule],
+        controllers: [app_controller_1.AppController, info_controller_1.InfoController],
+        providers: [app_service_1.AppService, prisma_service_1.PrismaService, info_service_1.InfoService],
     })
 ], AppModule);
 exports.AppModule = AppModule;
